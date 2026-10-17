@@ -1,8 +1,7 @@
 /* =========================================================
    BASE.CSS
-   Reset minimo + tipografia base + utilidades de accesibilidad.
-   No hay estilos de secciones especificas aca: eso vive en
-   sections.css. Esto es lo que comparte TODA la pagina.
+   Reset mínimo + tipografía base + utilidades de accesibilidad.
+   Lo específico de cada sección vive en sections.css.
    ========================================================= */
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -16,16 +15,21 @@ body{
   background:var(--color-black);
   color:var(--color-ivory);
   font-family:var(--font-body);
+  font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   padding-top:var(--sticky-h);
+}
+@media (max-width:759px){
+  body{ padding-bottom:calc(var(--bottom-bar-h) + env(safe-area-inset-bottom)); }
 }
 
 h1,h2,h3{
   font-family:var(--font-display);
   font-weight:500;
-  line-height:1.15;
+  line-height:1.1;
   color:var(--color-ivory);
+  letter-spacing:-0.01em;
 }
 
 a{ color:inherit; text-decoration:none; }
@@ -33,11 +37,12 @@ img{ max-width:100%; display:block; }
 button{ font:inherit; cursor:pointer; background:none; border:none; color:inherit; }
 
 .wrap{
+  width:100%;
   max-width:var(--content-width);
-  margin:0 auto;
-  padding-left:24px;
-  padding-right:24px;
+  margin-inline:auto;
+  padding-inline:var(--gutter);
 }
+@media (min-width:760px){ :root{ --gutter:40px; } }
 
 :focus-visible{
   outline:2px solid var(--color-gold-bright);
@@ -45,57 +50,30 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
 }
 
 .sr-only{
-  position:absolute;
-  width:1px; height:1px;
-  padding:0; margin:-1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
-  white-space:nowrap;
-  border:0;
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
 
 .skip-link{
-  position:absolute;
-  top:-100px;
-  left:12px;
-  z-index:300;
-  background:var(--color-gold);
-  color:var(--color-black);
-  padding:10px 16px;
-  border-radius:var(--radius);
-  font-size:14px;
-  font-weight:500;
+  position:absolute; top:-100px; left:12px; z-index:300;
+  background:var(--color-gold); color:var(--color-black);
+  padding:10px 16px; border-radius:var(--radius);
+  font-size:14px; font-weight:500;
   transition:top var(--ease);
 }
 .skip-link:focus{ top:12px; }
 
-section{
-  padding:var(--space-9) 0;
-  border-bottom:1px solid var(--color-line);
-}
-section:last-of-type{ border-bottom:none; }
+/* Secciones: el padding vertical vive SOLO acá para no pisarse con .wrap */
+.section{ padding-block:var(--space-8); }
+@media (min-width:760px){ .section{ padding-block:var(--space-9); } }
 
+.section-head{ max-width:var(--text-width); margin-bottom:var(--space-5); }
 .h2{
-  font-size:26px;
-  font-weight:600;
-  color:var(--color-gold-bright);
-  margin-bottom:22px;
+  font-size:clamp(30px, 6vw, 44px);
+  font-weight:500;
 }
 .section-lede{
-   color:var(--color-ivory-dim);
-   margin-bottom:20px;
-   max-width:42ch;
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(16px);
-  transition:opacity 500ms ease, transform 500ms ease;
-}
-.reveal.is-visible{
-  opacity:1;
-  transform:translateY(0);
-}
-@media (prefers-reduced-motion: reduce){
-  .reveal{ opacity:1; transform:none; transition:none; }
+  margin-top:var(--space-2);
+  color:var(--color-ivory-dim);
+  max-width:46ch;
 }

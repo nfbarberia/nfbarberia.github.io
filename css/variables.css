@@ -9,18 +9,21 @@
 
   /* ---- Color: paleta de marca (negro / dorado / marfil) ---- */
   --color-black:        #121110;  /* fondo principal */
-  --color-charcoal:     #1c1a18;  /* fondo secundario, tarjetas */
-  --color-gold:         #b8925a;  /* dorado base (bordes, líneas) */
-  --color-gold-bright:  #d4af6a;  /* dorado destacado (títulos, íconos) */
-  --color-ivory:        #f3ede2;  /* texto principal */
+  --color-charcoal:     #1b1917;  /* fondo secundario, bloques */
+  --color-charcoal-2:   #24211e;  /* bloques destacados */
+  --color-gold:         #b8925a;  /* dorado base (bordes, botones) */
+  --color-gold-bright:  #d4af6a;  /* dorado destacado (acciones, estrellas) */
+  --color-ivory:        #f3ede2;  /* texto principal y títulos */
   --color-ivory-dim:    #c9c0ae;  /* texto secundario */
-  --color-line:         #3a352e;  /* separadores */
+  --color-muted:        #9a9182;  /* notas chicas */
+  --color-line:         #36312a;  /* separadores */
+  --color-whatsapp:     #25D366;
 
   /* ---- Tipografía ---- */
-  --font-display: 'Fraunces', serif;      /* títulos */
-  --font-body:    'Work Sans', sans-serif; /* texto */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Work Sans', system-ui, sans-serif;
 
-  /* ---- Espaciado (escala consistente, en vez de números sueltos) ---- */
+  /* ---- Espaciado ---- */
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
@@ -28,21 +31,23 @@
   --space-5: 32px;
   --space-6: 48px;
   --space-7: 56px;
-  --space-8: 64px;
-  --space-9: 88px;  /* separación entre secciones — pedido explícito: más espacio */
+  --space-8: 72px;
+  --space-9: 96px;
 
   /* ---- Layout ---- */
-  --content-width: 640px;   /* ancho máximo del contenido, igual al sitio original */
-  --radius: 2px;            /* esquinas: el sitio usa un estilo recto, casi sin redondeo */
+  --content-width: 1120px;
+  --text-width: 640px;
+  --gutter: 20px;
+  --radius: 3px;
 
-  /* ---- Altura de la barra fija de WhatsApp/Reserva ---- */
-  --sticky-h: 60px;
+  /* ---- Barras fijas ---- */
+  --sticky-h: 60px;      /* barra superior */
+  --bottom-bar-h: 76px;  /* barra inferior de reserva (solo celular) */
 
   /* ---- Transiciones ---- */
   --ease: 200ms ease;
 }
 
-/* Respeta a quienes desactivaron animaciones en su sistema operativo */
 @media (prefers-reduced-motion: reduce){
   :root{ --ease: 0ms; }
 }

@@ -1,80 +1,141 @@
 /* =========================================================
    SECTIONS.CSS
-   Estilos que sólo aplican a una sección puntual del sitio.
-   Cada bloque está separado y comentado para que sumar o
-   sacar una sección no rompa a las demás.
+   Estilos de cada sección puntual. Cada bloque es independiente.
    ========================================================= */
 
 /* ---------------------------------------------------------
-   HERO — impacto y posicionamiento
+   HERO — foto real arriba, promesa y reserva
    --------------------------------------------------------- */
-.hero{
-  padding:var(--space-8) 0 var(--space-7);
+.hero{ position:relative; }
+.hero__media{
   position:relative;
+  height:min(58vh, 460px);
+  overflow:hidden;
 }
-.hero__mark{
-  font-family:var(--font-display);
-  font-size:15px;
-  letter-spacing:0.14em;
-  color:var(--color-gold-bright);
-  margin-bottom:var(--space-4);
+.hero__media img{
+  width:100%; height:100%; object-fit:cover; object-position:50% 30%;
 }
-.hero__logo{ width:104px; height:auto; margin-bottom:var(--space-4); }
-.hero__title{
-  font-size:clamp(38px, 9vw, 54px);
-  max-width:9ch;
+.hero__media::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(18,17,16,0) 45%, rgba(18,17,16,0.85) 85%, var(--color-black) 100%);
 }
-.hero__title em{ font-style:italic; color:var(--color-gold-bright); }
-.hero__lede{
-  margin-top:18px;
-  font-size:17px;
-  color:var(--color-ivory-dim);
-  max-width:34ch;
+.hero__body{ position:relative; margin-top:-64px; padding-bottom:var(--space-7); }
+.hero__place{ font-size:15px; color:var(--color-gold-bright); font-weight:500; margin-bottom:12px; }
+.hero__title{ font-size:clamp(40px, 11vw, 76px); max-width:11ch; }
+.hero__lede{ margin-top:18px; font-size:18px; color:var(--color-ivory-dim); max-width:36ch; }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.hero__note{ margin-top:12px; font-size:14px; color:var(--color-muted); }
+.hero .rating{ margin-top:24px; }
+@media (max-width:759px){
+  .hero__cta .btn{ flex:1 1 100%; }
 }
-.hero__cta{
-  display:flex;
-  gap:12px;
-  margin-top:var(--space-5);
-  flex-wrap:wrap;
+@media (min-width:760px){
+  .hero{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); align-items:center;
+         max-width:var(--content-width); margin-inline:auto; padding:var(--space-6) var(--gutter) var(--space-8); gap:56px; }
+  .hero__body{ order:1; margin-top:0; padding:0; }
+  .hero__body.wrap{ padding-inline:0; }
+  .hero__media{ order:2; height:600px; border-radius:var(--radius); }
+  .hero__media::after{ background:linear-gradient(180deg, rgba(18,17,16,0) 70%, rgba(18,17,16,0.35) 100%); }
 }
-.hero__rating{ margin-top:var(--space-4); }
 
 /* ---------------------------------------------------------
-   POR QUÉ NF BARBERÍA (antes "La experiencia NF")
-   Reutiliza .row-list / .row-item de components.css
+   PRUEBA SOCIAL — franja corta debajo del hero
    --------------------------------------------------------- */
-
-/* ---------------------------------------------------------
-   UBICACIÓN
-   --------------------------------------------------------- */
-.location-note{
-  margin-top:var(--space-3);
-  font-size:14px;
-  color:var(--color-ivory-dim);
+.proof{
+  border-block:1px solid var(--color-line);
   background:var(--color-charcoal);
-  border:1px solid var(--color-line);
-  padding:14px 16px;
+}
+.proof__inner{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+  padding-block:22px; text-align:center;
+}
+.proof__num{ font-family:var(--font-display); font-size:30px; line-height:1; color:var(--color-ivory); }
+.proof__label{ margin-top:6px; font-size:13px; line-height:1.35; color:var(--color-ivory-dim); }
+
+/* ---------------------------------------------------------
+   TRABAJOS — galería (el padding horizontal lo maneja .gallery)
+   --------------------------------------------------------- */
+.work .section-head{ margin-bottom:var(--space-4); }
+.work__more{ margin-top:var(--space-4); }
+
+/* ---------------------------------------------------------
+   EXPERIENCIA — el ritual del servicio premium
+   --------------------------------------------------------- */
+.experience{ background:var(--color-charcoal); }
+.experience__grid{ display:grid; gap:var(--space-5); }
+.experience__photo img{ width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius); }
+.ritual{ list-style:none; display:grid; gap:0; }
+.ritual li{ padding:16px 0; border-bottom:1px solid var(--color-line); }
+.ritual li:first-child{ padding-top:0; }
+.ritual strong{ display:block; font-family:var(--font-display); font-size:20px; font-weight:500; }
+.ritual span{ font-size:15px; color:var(--color-ivory-dim); }
+@media (min-width:760px){
+  .experience__grid{ grid-template-columns:1fr 1fr; align-items:center; gap:64px; }
+}
+
+/* ---------------------------------------------------------
+   PRIMERA VISITA — beneficio de bienvenida
+   --------------------------------------------------------- */
+.welcome__card{
+  border:1px solid var(--color-gold);
   border-radius:var(--radius);
+  padding:32px 24px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(212,175,106,0.12), transparent 55%),
+    var(--color-charcoal-2);
+  display:grid; gap:20px;
 }
-.map-frame{ margin-top:var(--space-4); }
-.map-cta{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--color-gold-bright);
-  font-weight:500;
-  transition:color var(--ease);
+.welcome__big{ font-family:var(--font-display); font-size:clamp(44px, 12vw, 72px); line-height:1; color:var(--color-gold-bright); }
+.welcome__text{ color:var(--color-ivory-dim); max-width:40ch; }
+.welcome__text strong{ color:var(--color-ivory); }
+@media (min-width:760px){
+  .welcome__card{ grid-template-columns:auto 1fr auto; align-items:center; gap:40px; padding:40px 48px; }
 }
-.map-cta:hover{ color:var(--color-ivory); }
+
+/* ---------------------------------------------------------
+   RESEÑAS
+   --------------------------------------------------------- */
+.reviews-foot{ margin-top:var(--space-4); }
+
+/* ---------------------------------------------------------
+   CÓMO LLEGAR — el local está en un subsuelo: se explica paso a paso
+   --------------------------------------------------------- */
+.visit__grid{ display:grid; gap:var(--space-5); }
+.visit__address{ font-size:18px; margin-bottom:var(--space-4); }
+.visit__address small{ display:block; font-size:15px; color:var(--color-ivory-dim); }
+.visit__hours{
+  margin-top:var(--space-4);
+  padding:16px 18px; border-radius:var(--radius);
+  background:var(--color-charcoal); border:1px solid var(--color-line);
+  font-size:15px; color:var(--color-ivory-dim);
+}
+.visit__hours strong{ color:var(--color-ivory); }
+.visit__actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:var(--space-4); }
+.map{
+  width:100%; aspect-ratio:4/3; border:1px solid var(--color-line); border-radius:var(--radius);
+  background:var(--color-charcoal);
+}
+@media (min-width:760px){
+  .visit__grid{ grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+  .map{ aspect-ratio:1/1; }
+}
+
+/* ---------------------------------------------------------
+   CIERRE — última invitación a reservar
+   --------------------------------------------------------- */
+.closing{ text-align:center; border-top:1px solid var(--color-line); }
+.closing .h2{ max-width:16ch; margin-inline:auto; }
+.closing p{ margin:14px auto 28px; color:var(--color-ivory-dim); max-width:40ch; }
+.closing .contact-links{ justify-content:center; margin-top:var(--space-5); }
 
 /* ---------------------------------------------------------
    FOOTER
    --------------------------------------------------------- */
 footer{
-  padding:var(--space-8) 0 var(--space-6);
-  font-size:13px;
-  color:var(--color-ivory-dim);
-  display:flex;
-  flex-direction:column;
-  gap:4px;
+  padding-block:var(--space-5);
+  border-top:1px solid var(--color-line);
+  font-size:13px; color:var(--color-muted);
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px;
 }
+
+@media (min-width:760px){ .only-mobile{ display:none; } }

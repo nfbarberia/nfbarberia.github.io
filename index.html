@@ -40,8 +40,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+<link rel="preload" as="image" href="assets/img/trabajos/hero-mobile.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
@@ -85,6 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Reserva de turno en NF Barbería"
     }
   },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=NF+Barber%C3%ADa+San+Isidro",
   "sameAs": [
     "https://www.instagram.com/nfbarberia.si/",
     "https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe"
@@ -114,224 +116,296 @@ src="https://www.facebook.com/tr?id=145715509573562&ev=PageView&noscript=1"
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN6VZDSJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+<!-- Íconos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4c0 1-1 2-2 2A16 16 0 014 6c0-1 1-2 2-2z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></g></symbol>
+</svg>
+
 <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 
-<div class="sticky-cta-bar">
-  <img class="sticky-cta-bar__brand" src="assets/img/logo.png" alt="NF Barbería" width="120" height="119">
-  <div class="sticky-cta-bar__actions">
-    <a class="btn btn-solid btn-compact js-track-reservar"
-       data-origen="barra_fija"
+<!-- Barra superior -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="topbar__brand" href="#main-content" aria-label="NF Barbería, inicio">
+      <img src="assets/img/logo.png" alt="NF Barbería" width="120" height="119">
+    </a>
+    <nav class="topbar__nav" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#como-llegar">Cómo llegar</a>
+    </nav>
+    <a class="btn btn-solid btn-compact js-track-reservar" data-origen="barra_superior"
        href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe"
        target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-      <span class="btn-label">Reservar turno</span>
+      <svg aria-hidden="true"><use href="#i-cal"/></svg>
+      Reservar turno
     </a>
   </div>
+</header>
+
+<!-- Barra inferior fija (celular) -->
+<div class="bottombar">
+  <a class="btn btn-solid js-track-reservar" data-origen="barra_inferior"
+     href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe"
+     target="_blank" rel="noopener">
+    <svg aria-hidden="true"><use href="#i-cal"/></svg>
+    Reservar turno
+  </a>
+  <a class="btn btn-wa js-track-whatsapp" data-origen="barra_inferior"
+     href="https://wa.me/5491173672627" target="_blank" rel="noopener"
+     aria-label="Escribir por WhatsApp">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
 </div>
 
+<!-- WhatsApp flotante (escritorio) -->
 <a class="whatsapp-float js-track-whatsapp" data-origen="flotante"
    href="https://wa.me/5491173672627" target="_blank" rel="noopener"
    aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
 <main id="main-content">
 
-  <header class="hero wrap reveal">
-    <img class="hero__logo" src="assets/img/logo.png" alt="NF Barbería" width="104" height="103">
-    <p class="hero__mark">NF BARBERÍA · SAN ISIDRO</p>
-    <h1 class="hero__title">Cortes con <em>oficio</em>, no con apuro.</h1>
-    <p class="hero__lede">Más de 10 años dando forma al estilo de San Isidro. Cortes de precisión, afeitado clásico y atención al detalle en cada visita.</p>
-    <div class="hero__cta">
-      <a class="btn btn-solid js-track-reservar" data-origen="hero"
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <img src="assets/img/trabajos/hero-mobile.webp" width="750" height="850"
+           alt="Cliente sonriendo mientras Nicolás le termina el perfilado de la barba" fetchpriority="high">
+    </div>
+    <div class="hero__body wrap">
+      <p class="hero__place">Barbería en San Isidro</p>
+      <h1 class="hero__title" id="hero-title">Cortes con oficio, no con apuro.</h1>
+      <p class="hero__lede">Más de 10 años cortando en San Isidro. Reservás online en un minuto y te esperamos con el café listo.</p>
+      <div class="hero__cta">
+        <a class="btn btn-solid js-track-reservar" data-origen="hero"
+           href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe"
+           target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-cal"/></svg>
+          Reservar turno
+        </a>
+        <a class="btn btn-outline js-track-whatsapp" data-origen="hero"
+           href="https://wa.me/5491173672627" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-wa"/></svg>
+          Consultar por WhatsApp
+        </a>
+      </div>
+      <p class="hero__note">Elegís servicio, día y horario. La confirmación te llega al instante.</p>
+      <div class="rating">
+        <span class="stars" aria-hidden="true">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </span>
+        <span><strong>4,9</strong> en Google, con <a href="https://www.google.com/maps/search/?api=1&amp;query=NF+Barber%C3%ADa+San+Isidro" target="_blank" rel="noopener">305 reseñas</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUEBA SOCIAL -->
+  <div class="proof" role="list" aria-label="NF Barbería en números">
+    <div class="wrap proof__inner">
+      <div role="listitem"><div class="proof__num">4,9</div><div class="proof__label">calificación en Google</div></div>
+      <div role="listitem"><div class="proof__num">305</div><div class="proof__label">reseñas de clientes</div></div>
+      <div role="listitem"><div class="proof__num">+10</div><div class="proof__label">años de oficio</div></div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios" aria-labelledby="servicios-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="servicios-title">Servicios</h2>
+        <p class="section-lede">Tocá el servicio que quieras y elegís el horario. Todos incluyen bebida de cortesía y sillón con masajeador.</p>
+      </div>
+      <div class="service-list">
+        <a class="service js-track-reservar" data-origen="servicio_corte" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
+          <span class="service__name">Corte de cabello</span>
+          <span class="service__desc">Máquina, tijera o combinado, terminado y peinado.</span>
+          <span class="service__time">40 min<span class="service__go">Reservar</span></span>
+        </a>
+        <a class="service js-track-reservar" data-origen="servicio_barba" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
+          <span class="service__name">Corte de barba</span>
+          <span class="service__desc">Rebaje y perfilado con contornos bien definidos.</span>
+          <span class="service__time">20 min<span class="service__go">Reservar</span></span>
+        </a>
+        <a class="service js-track-reservar" data-origen="servicio_corte_barba" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
+          <span class="service__name">Corte y barba</span>
+          <span class="service__desc">Pelo y barba en el mismo turno, pensados juntos.</span>
+          <span class="service__time">1 h<span class="service__go">Reservar</span></span>
+        </a>
+        <a class="service js-track-reservar" data-origen="servicio_afeitado" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
+          <span class="service__name">Corte y afeitado</span>
+          <span class="service__desc">Corte más afeitado clásico con ritual de toalla.</span>
+          <span class="service__time">1 h<span class="service__go">Reservar</span></span>
+        </a>
+        <a class="service js-track-reservar" data-origen="servicio_premium" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
+          <span class="service__name">Corte premium</span>
+          <span class="service__desc">Corte con mascarilla de gel frío para los ojos mientras te relajás.</span>
+          <span class="service__time">1 h<span class="service__go">Reservar</span></span>
+        </a>
+        <a class="service service--featured js-track-reservar" data-origen="servicio_premium_barba" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
+          <span class="service__name">Corte y barba premium</span>
+          <span class="service__desc">El ritual entero: café, masajes, mascarilla, crema y aceite para la barba.</span>
+          <span class="service__time">1 h 20 min<span class="service__go">Reservar</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABAJOS -->
+  <section class="section work" id="trabajos" aria-labelledby="trabajos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="trabajos-title">El trabajo, de cerca</h2>
+        <p class="section-lede">Fotos reales de cortes hechos acá.<span class="only-mobile"> Deslizá para ver más.</span></p>
+      </div>
+    </div>
+    <div class="gallery" tabindex="0" aria-label="Galería de trabajos">
+      <figure><img src="assets/img/trabajos/fade.webp" alt="Degradado a máquina en la nuca" loading="lazy" width="760" height="450"><figcaption>Degradados prolijos</figcaption></figure>
+      <figure><img src="assets/img/trabajos/barba.webp" alt="Barba perfilada con contorno definido" loading="lazy" width="760" height="450"><figcaption>Barba con contorno</figcaption></figure>
+      <figure><img src="assets/img/trabajos/contorno.webp" alt="Perfilado del contorno detrás de la oreja" loading="lazy" width="760" height="450"><figcaption>Contornos limpios</figcaption></figure>
+      <figure><img src="assets/img/trabajos/maquina.webp" alt="Terminación del degradado con máquina" loading="lazy" width="760" height="450"><figcaption>Terminaciones</figcaption></figure>
+      <figure><img src="assets/img/trabajos/precision.webp" alt="Peinado final con peine" loading="lazy" width="760" height="450"><figcaption>Peinado final</figcaption></figure>
+      <figure><img src="assets/img/trabajos/afeitado.webp" alt="Afeitado del cuello con shaver" loading="lazy" width="760" height="450"><figcaption>Afeitado del cuello</figcaption></figure>
+      <figure><img src="assets/img/trabajos/peinado.webp" alt="Detalle del peinado con peine y aceite" loading="lazy" width="760" height="288"><figcaption>Detalle final</figcaption></figure>
+      <figure><img src="assets/img/trabajos/hero.webp" alt="Cliente con corte y barba terminados" loading="lazy" width="1000" height="731"><figcaption>Así se sale de acá</figcaption></figure>
+    </div>
+    <div class="wrap work__more">
+      <a class="btn btn-outline" href="https://www.instagram.com/nfbarberia.si/" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-ig"/></svg>
+        Ver más en Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="section experience" id="experiencia" aria-labelledby="experiencia-title">
+    <div class="wrap experience__grid">
+      <div>
+        <div class="section-head">
+          <h2 class="h2" id="experiencia-title">Una hora que es para vos</h2>
+          <p class="section-lede">En los servicios premium el corte viene con un ritual completo, de principio a fin.</p>
+        </div>
+        <ul class="ritual">
+          <li><strong>Café antes de empezar</strong><span>Llegás, te acomodás y elegís qué tomar.</span></li>
+          <li><strong>Masajeador en el asiento y la cabeza</strong><span>Mientras se trabaja, vos descansás.</span></li>
+          <li><strong>Mascarilla de gel frío en los ojos</strong><span>Un rato de pausa real en medio del día.</span></li>
+          <li><strong>Crema y aceite al final</strong><span>Hidrata la zona afeitada y le da brillo a la barba.</span></li>
+        </ul>
+      </div>
+      <div class="experience__photo">
+        <img src="assets/img/trabajos/tijera.webp" alt="Nicolás trabajando un corte a tijera" loading="lazy" width="760" height="450">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMERA VISITA -->
+  <section class="section" id="primera-vez" aria-labelledby="primera-title">
+    <div class="wrap">
+      <div class="welcome__card">
+        <div class="welcome__big" aria-hidden="true">10% OFF</div>
+        <div>
+          <h2 class="h2" id="primera-title" style="font-size:clamp(26px,5vw,34px)">¿Es tu primera vez?</h2>
+          <p class="welcome__text" style="margin-top:8px">Tenés <strong>10% de descuento en tu primer corte</strong>. Escribinos por WhatsApp y te reservamos el turno con el beneficio aplicado.</p>
+        </div>
+        <a class="btn btn-solid js-track-whatsapp" data-origen="promo_primera_vez"
+           href="https://wa.me/5491173672627?text=Hola%21%20Es%20mi%20primera%20vez%20en%20NF%20Barber%C3%ADa%20y%20quiero%20reservar%20con%20el%20c%C3%B3digo%20PRIMERANF10%20%2810%25%20OFF%29%20%F0%9F%8E%89"
+           target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-wa"/></svg>
+          Quiero mi 10% OFF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section class="section" id="resenas" aria-labelledby="resenas-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="resenas-title">Lo que dicen los clientes</h2>
+        <p class="section-lede">4,9 de promedio sobre 305 reseñas en Google.</p>
+      </div>
+      <div class="reviews">
+        <figure class="review">
+          <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>“Es un genio Nicolás. Súper detallista. Lo recomiendo a full.”</blockquote>
+          <cite>Pablo, en Google</cite>
+        </figure>
+        <figure class="review">
+          <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>“Un capo. Nunca escribo reseñas, pero esta no pude evitarla. 100% recomendable.”</blockquote>
+          <cite>Cliente, en Google</cite>
+        </figure>
+        <figure class="review">
+          <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>“Muy atento y amigable, todo ordenado y prolijo. Súper recomendable.”</blockquote>
+          <cite>Ezequiel, en Google</cite>
+        </figure>
+      </div>
+      <div class="reviews-foot">
+        <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=NF+Barber%C3%ADa+San+Isidro" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-star"/></svg>
+          Leer las 305 reseñas
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO LLEGAR -->
+  <section class="section" id="como-llegar" aria-labelledby="llegar-title" style="background:var(--color-charcoal)">
+    <div class="wrap visit__grid">
+      <div>
+        <div class="section-head">
+          <h2 class="h2" id="llegar-title">Cómo llegar</h2>
+          <p class="section-lede">Estamos dentro de una galería, en el subsuelo. La primera vez cuesta encontrarnos, así que te lo dejamos fácil.</p>
+        </div>
+        <p class="visit__address">Gral. Manuel Belgrano 126, Local 33<small>Galería Belgrano (subsuelo), San Isidro</small></p>
+        <ol class="steps">
+          <li><div><strong>Llegá a Belgrano 126</strong><span>La entrada de la Galería Belgrano da a la calle.</span></div></li>
+          <li><div><strong>Bajá al subsuelo</strong><span>Entrá a la galería y bajá un piso.</span></div></li>
+          <li><div><strong>Buscá el local 33</strong><span>¿Te perdiste? Escribinos y te guiamos.</span></div></li>
+        </ol>
+        <p class="visit__hours"><strong>Martes a sábado, solo con turno.</strong> Los lunes está cerrado.</p>
+        <div class="visit__actions">
+          <a class="btn btn-solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=NF+Barber%C3%ADa+Belgrano+126+San+Isidro" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-pin"/></svg>
+            Cómo llegar con Google Maps
+          </a>
+        </div>
+      </div>
+      <iframe class="map" title="Mapa de NF Barbería en Galería Belgrano, San Isidro" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=NF%20Barber%C3%ADa%2C%20Belgrano%20126%2C%20San%20Isidro%2C%20Buenos%20Aires&amp;z=17&amp;output=embed"></iframe>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="section closing" aria-labelledby="cierre-title">
+    <div class="wrap">
+      <h2 class="h2" id="cierre-title">Elegí tu día y tu horario</h2>
+      <p>Reservás en un minuto. Si tenés alguna duda antes, escribinos y te respondemos.</p>
+      <a class="btn btn-solid js-track-reservar" data-origen="cierre"
          href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe"
          target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <svg aria-hidden="true"><use href="#i-cal"/></svg>
         Reservar turno
       </a>
-      <a class="btn btn-outline js-track-whatsapp" data-origen="hero"
-         href="https://wa.me/5491173672627"
-         target="_blank" rel="noopener">
-        <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="width:16px;height:16px;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-        Escribir por WhatsApp
-      </a>
-    </div>
-    <div class="rating hero__rating">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
-      <strong>4.9</strong>
-      <span>calificación de clientes en Fresha y Google</span>
-    </div>
-  </header>
-
-  <section class="wrap reveal" id="promo-nuevos">
-    <h2 class="h2" style="display:flex; align-items:center; gap:12px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:24px;height:24px;color:var(--color-gold-bright); flex-shrink:0;" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18M12 8v13M7.5 8a2.5 2.5 0 010-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 010 5"/></svg>
-      ¿Primera vez en NF Barbería?
-    </h2>
-    <p class="section-lede">Tenés un regalo: <strong style="color:var(--color-gold-bright);">10% OFF</strong> en tu primer corte. Escribinos y te confirmamos el turno al toque.</p>
-    <a class="btn btn-solid js-track-whatsapp" data-origen="promo_primera_vez"
-       href="https://wa.me/5491173672627?text=Hola%21%20Es%20mi%20primera%20vez%20en%20NF%20Barber%C3%ADa%20y%20quiero%20reservar%20con%20el%20c%C3%B3digo%20PRIMERANF10%20%2810%25%20OFF%29%20%F0%9F%8E%89"
-       target="_blank" rel="noopener">
-      <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="width:16px;height:16px;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-      Quiero mi 10% OFF
-    </a>
-  </section>
-
-  <section class="wrap reveal" id="por-que">
-    <h2 class="h2" style="display:flex; align-items:center; gap:12px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:24px;height:24px;color:var(--color-gold-bright); flex-shrink:0;" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.5 4.5 0 0112 6.5a4.5 4.5 0 017.5 4c0 5.4-7.5 10-7.5 10z"/></svg>
-      Por qué NF Barbería
-    </h2>
-    <div class="row-list">
-      <div class="row-item">
-        <div><div class="row-title">Bebida de cortesía</div><div class="row-note">Café, té o algo fresco — elegís del menú mientras te acomodás</div></div>
+      <div class="contact-links">
+        <a class="js-track-whatsapp" data-origen="cierre" href="https://wa.me/5491173672627" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+        <a href="tel:+5491173672627"><svg aria-hidden="true"><use href="#i-phone"/></svg>11 7367-2627</a>
+        <a href="https://www.instagram.com/nfbarberia.si/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@nfbarberia.si</a>
       </div>
-      <div class="row-item">
-        <div><div class="row-title">Sillón con masajeador</div><div class="row-note">Relajate durante el corte, no solo te cortás el pelo</div></div>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Reservá sin esperar</div><div class="row-note">Turno confirmado desde la app, sin colas en el local</div></div>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Ambiente cuidado</div><div class="row-note">Local climatizado, limpio y con buena música</div></div>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Tu opinión nos importa</div><div class="row-note">Escuchamos cada comentario para mejorar la experiencia</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap reveal" id="servicios">
-    <h2 class="h2" style="display:flex; align-items:center; gap:12px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:24px;height:24px;color:var(--color-gold-bright); flex-shrink:0;" aria-hidden="true"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8.2 7.6L20 19M20 5L8.2 16.4"/></svg>
-      Servicios
-    </h2>
-    <div class="row-list">
-      <div class="row-item">
-        <div><div class="row-title">Corte de cabello</div><div class="row-note">40 min</div></div>
-        <a class="row-link js-track-reservar" data-origen="servicios" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">Reservar →</a>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Corte de barba</div><div class="row-note">20 min</div></div>
-        <a class="row-link js-track-reservar" data-origen="servicios" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">Reservar →</a>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Corte y barba</div><div class="row-note">1 h</div></div>
-        <a class="row-link js-track-reservar" data-origen="servicios" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">Reservar →</a>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Corte y afeitado con ritual de toalla</div><div class="row-note">1 h · experiencia completa</div></div>
-        <a class="row-link js-track-reservar" data-origen="servicios" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">Reservar →</a>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Corte premium</div><div class="row-note">1 h · con mascarilla</div></div>
-        <a class="row-link js-track-reservar" data-origen="servicios" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">Reservar →</a>
-      </div>
-      <div class="row-item">
-        <div><div class="row-title">Corte y barba premium</div><div class="row-note">1 h 20 min · con mascarilla</div></div>
-        <a class="row-link js-track-reservar" data-origen="servicios" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">Reservar →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap reveal" id="resenas">
-    <h2 class="h2" style="display:flex; align-items:center; gap:12px;">
-      <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;color:var(--color-gold-bright); flex-shrink:0;" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.7 7.1-.7z"/></svg>
-      Lo que dicen los clientes
-    </h2>
-    <div class="review-carousel" id="reviewCarousel">
-      <div class="review-track">
-        <div class="review-slide">
-          <p class="quote">"Un profesional atento, con muchísimo cuidado en cada detalle del corte."</p>
-          <p class="quote-src">— Reseña de cliente, Google Business Profile</p>
-        </div>
-        <div class="review-slide">
-          <p class="quote">"Se nota el buen trato y las ganas de que salgas conforme."</p>
-          <p class="quote-src">— Reseña de cliente, Fresha</p>
-        </div>
-        <div class="review-slide">
-          <p class="quote">"Muy atento y amigable, todo ordenado y prolijo. Súper recomendable."</p>
-          <p class="quote-src">— Ezequiel, reseña en Google</p>
-        </div>
-        <div class="review-slide">
-          <p class="quote">"Es un genio Nicolás. Súper detallista. Lo recomiendo a full."</p>
-          <p class="quote-src">— Pablo, reseña en Google</p>
-        </div>
-        <div class="review-slide">
-          <p class="quote">"Un corte y detalle perfecto. Verdaderamente muy buen lugar, 10 puntos."</p>
-          <p class="quote-src">— Reseña de cliente, Google</p>
-        </div>
-        <div class="review-slide">
-          <p class="quote">"Un capo. Nunca escribo reseñas, pero esta no pude evitarla. 100% recomendable."</p>
-          <p class="quote-src">— Reseña de cliente, Google</p>
-        </div>
-        <div class="review-slide">
-          <p class="quote">"La mejor barbería de la zona por lejos. Precio, calidad y buena onda."</p>
-          <p class="quote-src">— Reseña de cliente, Google</p>
-        </div>
-      </div>
-      <div class="review-dots" id="reviewDots"></div>
-    </div>
-  </section>
-
-  <section class="wrap reveal" id="ubicacion">
-    <h2 class="h2" style="display:flex; align-items:center; gap:12px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:24px;height:24px;color:var(--color-gold-bright); flex-shrink:0;" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-      Dónde estamos
-    </h2>
-    <p>Gral. Manuel Belgrano 126, Subsuelo, Local 33</p>
-    <p>San Isidro, Provincia de Buenos Aires</p>
-    <div class="location-note">
-      Estamos en el subsuelo de la Galería Belgrano — si es tu primera vez, buscá la entrada de la galería sobre Belgrano 126 y bajá un piso. Cualquier duda, escribinos por WhatsApp antes de venir.
-    </div>
-    <div class="map-frame">
-      <a class="map-cta" href="https://www.google.com/maps/search/?api=1&query=General+Manuel+Belgrano+126+San+Isidro" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:26px;height:26px;" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        <span>Abrir en Google Maps</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="wrap reveal" id="contacto">
-    <h2 class="h2" style="display:flex; align-items:center; gap:12px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:24px;height:24px;color:var(--color-gold-bright); flex-shrink:0;" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H8l-5 4V6a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      Contacto
-    </h2>
-    <div class="contact-grid">
-      <a class="contact-item js-track-reservar" data-origen="contacto" href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe" target="_blank" rel="noopener">
-        <span>Reservar turno</span>
-        <span class="label">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          <strong>Fresha →</strong>
-        </span>
-      </a>
-      <a class="contact-item js-track-whatsapp" data-origen="contacto" href="https://wa.me/5491173672627" target="_blank" rel="noopener">
-        <span>Consultas rápidas</span>
-        <span class="label">
-          <svg class="icon" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-          <strong>WhatsApp →</strong>
-        </span>
-      </a>
-      <a class="contact-item" href="tel:+5491173672627">
-        <span>Llamada directa</span>
-        <span class="label">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4c0 1-1 2-2 2A16 16 0 014 6c0-1 1-2 2-2z"/></svg>
-          <strong>11 7367-2627 →</strong>
-        </span>
-      </a>
-      <a class="contact-item" href="https://www.instagram.com/nfbarberia.si/" target="_blank" rel="noopener">
-        <span>@nfbarberia.si</span>
-        <span class="label">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
-          <strong>Instagram →</strong>
-        </span>
-      </a>
     </div>
   </section>
 
   <footer class="wrap">
-    <span>NF Barbería · San Isidro</span>
-    <span>Galería Belgrano, Local 33</span>
+    <span>NF Barbería, San Isidro</span>
+    <span>Galería Belgrano, subsuelo, local 33</span>
   </footer>
 
 </main>
