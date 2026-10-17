@@ -64,7 +64,7 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
 .skip-link:focus{ top:12px; }
 
 /* Secciones: el padding vertical vive SOLO acá para no pisarse con .wrap */
-.section{ padding-block:var(--space-8); }
+.section{ padding-block:64px; }
 @media (min-width:760px){ .section{ padding-block:var(--space-9); } }
 
 .section-head{ max-width:var(--text-width); margin-bottom:var(--space-5); }

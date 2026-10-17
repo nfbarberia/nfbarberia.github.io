@@ -140,7 +140,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#resenas">Reseñas</a>
       <a href="#como-llegar">Cómo llegar</a>
     </nav>
-    <a class="btn btn-solid btn-compact js-track-reservar" data-origen="barra_superior"
+    <a class="topbar__where" href="#como-llegar">
+      <svg aria-hidden="true"><use href="#i-pin"/></svg>
+      Cómo llegar
+    </a>
+    <a class="btn btn-solid btn-compact topbar__book js-track-reservar" data-origen="barra_superior"
        href="https://www.fresha.com/a/nf-barberia-san-isidro-general-manuel-belgrano-126-txnyiawe"
        target="_blank" rel="noopener">
       <svg aria-hidden="true"><use href="#i-cal"/></svg>
@@ -176,8 +180,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__media">
-      <img src="assets/img/trabajos/hero-mobile.webp" width="750" height="850"
-           alt="Cliente sonriendo mientras Nicolás le termina el perfilado de la barba" fetchpriority="high">
+      <img src="assets/img/trabajos/hero-mobile.webp" width="780" height="800"
+           alt="Cliente sonriendo mientras le terminan el perfilado de la barba a máquina" fetchpriority="high">
     </div>
     <div class="hero__body wrap">
       <p class="hero__place">Barbería en San Isidro</p>
@@ -330,7 +334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="h2" id="resenas-title">Lo que dicen los clientes</h2>
         <p class="section-lede">4,9 de promedio sobre 305 reseñas en Google.</p>
       </div>
-      <div class="reviews">
+      <div class="reviews" tabindex="0" aria-label="Reseñas de clientes">
         <figure class="review">
           <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
           <blockquote>“Es un genio Nicolás. Súper detallista. Lo recomiendo a full.”</blockquote>
@@ -345,6 +349,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
           <blockquote>“Muy atento y amigable, todo ordenado y prolijo. Súper recomendable.”</blockquote>
           <cite>Ezequiel, en Google</cite>
+        </figure>
+        <figure class="review">
+          <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>“Un corte y detalle perfecto. Verdaderamente muy buen lugar, 10 puntos.”</blockquote>
+          <cite>Cliente, en Google</cite>
+        </figure>
+        <figure class="review">
+          <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>“Se nota el buen trato y las ganas de que salgas conforme.”</blockquote>
+          <cite>Cliente, en Fresha</cite>
+        </figure>
+        <figure class="review">
+          <span class="stars" aria-label="5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>“La mejor barbería de la zona por lejos. Precio, calidad y buena onda.”</blockquote>
+          <cite>Cliente, en Google</cite>
         </figure>
       </div>
       <div class="reviews-foot">
@@ -381,6 +400,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <iframe class="map" title="Mapa de NF Barbería en Galería Belgrano, San Isidro" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               src="https://maps.google.com/maps?q=NF%20Barber%C3%ADa%2C%20Belgrano%20126%2C%20San%20Isidro%2C%20Buenos%20Aires&amp;z=17&amp;output=embed"></iframe>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="faq-title">Antes de venir</h2>
+      </div>
+      <div class="faq__list">
+        <details>
+          <summary>¿Atienden sin turno?</summary>
+          <p>No, se atiende solo con turno. Así llegás y te sentás, sin esperar. Lo reservás online en un minuto.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda cada servicio?</summary>
+          <p>Desde 20 minutos un arreglo de barba hasta 1 h 20 min el corte y barba premium. La duración de cada uno figura en la lista de servicios.</p>
+        </details>
+        <details>
+          <summary>No encuentro el local, ¿dónde está?</summary>
+          <p>En el subsuelo de la Galería Belgrano, Belgrano 126, local 33. Entrás a la galería y bajás un piso. Si igual no lo ubicás, <a class="js-track-whatsapp" data-origen="faq" href="https://wa.me/5491173672627" target="_blank" rel="noopener">escribinos por WhatsApp</a> y te guiamos.</p>
+        </details>
+        <details>
+          <summary>¿Puedo hacer una consulta antes de reservar?</summary>
+          <p>Sí. Mandanos un WhatsApp al 11 7367-2627 con lo que quieras hacerte, incluso con una foto de referencia, y te decimos qué servicio te conviene.</p>
+        </details>
+      </div>
     </div>
   </section>
 

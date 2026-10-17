@@ -13,13 +13,13 @@
   overflow:hidden;
 }
 .hero__media img{
-  width:100%; height:100%; object-fit:cover; object-position:50% 30%;
+  width:100%; height:100%; object-fit:cover; object-position:28% 30%;
 }
 .hero__media::after{
   content:''; position:absolute; inset:0;
   background:linear-gradient(180deg, rgba(18,17,16,0) 45%, rgba(18,17,16,0.85) 85%, var(--color-black) 100%);
 }
-.hero__body{ position:relative; margin-top:-64px; padding-bottom:var(--space-7); }
+.hero__body{ position:relative; margin-top:-64px; padding-bottom:var(--space-6); }
 .hero__place{ font-size:15px; color:var(--color-gold-bright); font-weight:500; margin-bottom:12px; }
 .hero__title{ font-size:clamp(40px, 11vw, 76px); max-width:11ch; }
 .hero__lede{ margin-top:18px; font-size:18px; color:var(--color-ivory-dim); max-width:36ch; }
@@ -139,3 +139,37 @@ footer{
 }
 
 @media (min-width:760px){ .only-mobile{ display:none; } }
+
+/* ---------------------------------------------------------
+   PREGUNTAS FRECUENTES
+   --------------------------------------------------------- */
+.faq__list{ max-width:760px; border-top:1px solid var(--color-line); }
+.faq details{ border-bottom:1px solid var(--color-line); }
+.faq summary{
+  list-style:none; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:20px 0; min-height:44px;
+  font-family:var(--font-display); font-size:20px;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:'+'; flex-shrink:0;
+  font-family:var(--font-body); font-size:24px; line-height:1; color:var(--color-gold-bright);
+  transition:transform var(--ease);
+}
+.faq details[open] summary::after{ transform:rotate(45deg); }
+.faq details p{ padding:0 0 20px; color:var(--color-ivory-dim); max-width:60ch; }
+.faq details a{ color:var(--color-gold-bright); text-decoration:underline; text-underline-offset:3px; }
+
+/* ---------------------------------------------------------
+   ENTRADA DEL HERO — un solo momento animado al cargar
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference){
+  .hero__media img{ animation:hero-in 1100ms cubic-bezier(.2,.7,.2,1) both; }
+  .hero__body > *{ animation:hero-text 700ms ease both; }
+  .hero__body > :nth-child(2){ animation-delay:80ms; }
+  .hero__body > :nth-child(3){ animation-delay:160ms; }
+  .hero__body > :nth-child(n+4){ animation-delay:240ms; }
+}
+@keyframes hero-in{ from{ opacity:0; transform:scale(1.06); } to{ opacity:1; transform:none; } }
+@keyframes hero-text{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
